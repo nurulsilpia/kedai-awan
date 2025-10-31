@@ -1,345 +1,441 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" class="!scroll-smooth md:scroll-auto">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Kedai Awan - Spicy Kicks that Make You Fly High!</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Kedai Awan - Makanan Enak Under 30 Ribu!</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="/assets/logo.png"> 
-    <script id="tailwind-config">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ea2a33",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#211111",
+                        primary: "#FFB30E", // orange-500
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#18181B", // zinc-900
+                    },
+                    textColor: {
+                        primary: "#F17228"
                     },
                     fontFamily: {
-                        "display": ["Epilogue", "sans-serif"]
+                        display: ["Poppins", "sans-serif"],
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    borderRadius: {
+                        DEFAULT: "0.5rem", // 8px
+                    },
                 },
             },
-        }
+        };
     </script>
     <style>
-        body {
-            font-family: 'Epilogue', sans-serif;
+        .hero-bg {
+            background-image: url('assets/header.jpg');
+            background-size: auto;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
-    <!-- Style untuk background contour -->
-    <style>
-        .contour-bg-light {
-            /* Background contour halus untuk mode terang */
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-10 10 C 20 40, 40 40, 70 10 S 100 0, 130 30' stroke='%23e7e5e5' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 30 C 20 60, 40 60, 70 30 S 100 20, 130 50' stroke='%23e7e5e5' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 50 C 20 80, 40 80, 70 50 S 100 40, 130 70' stroke='%23e7e5e5' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 70 C 20 100, 40 100, 70 70 S 100 60, 130 90' stroke='%23e7e5e5' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 90 C 20 120, 40 120, 70 90 S 100 80, 130 110' stroke='%23e7e5e5' fill='none' stroke-width='1'/%3E%3C/svg%3E");
-            background-size: 100px 100px;
+        .how-it-works-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: url('assets/image-food-pattern-background.png');
+            background-repeat: repeat;
+            background-position: center;
+            opacity: 0.1;
         }
 
-        .dark .contour-bg-dark {
-            /* Background contour halus untuk mode gelap */
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-10 10 C 20 40, 40 40, 70 10 S 100 0, 130 30' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 30 C 20 60, 40 60, 70 30 S 100 20, 130 50' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 50 C 20 80, 40 80, 70 50 S 100 40, 130 70' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 70 C 20 100, 40 100, 70 70 S 100 60, 130 90' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3Cpath d='M-10 90 C 20 120, 40 120, 70 90 S 100 80, 130 110' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
-            background-size: 100px 100px;
+        .how-it-works-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-image: linear-gradient(to bottom, #FDEDCA, transparent);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .dark .how-it-works-bg::after {
+            background-image: linear-gradient(to bottom, #27272A 40%, transparent);
+        }
+
+        .app-install-bg {
+            background-color: #FDBA74;
+        }
+
+        .dark .app-install-bg {
+            background-color: #9A3412;
+        }
+
+        .feedback-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFB30E' fill-opacity='1' d='M0,160L48,170.7C96,181,192,203,288,181.3C384,160,480,96,576,90.7C672,85,768,139,864,165.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menu-button');
+            const navMenu = document.getElementById('nav-menu');
+
+            menuButton.addEventListener('click', () => {
+                navMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </head>
 
-<!-- Menambahkan class background contour yang baru -->
-
-<body class="bg-background-light dark:bg-background-dark font-display contour-bg-light dark:contour-bg-dark">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden group/design-root">
-
-        <!-- Navbar dibuat transparan agar background hero terlihat -->
-        <header
-            class="sticky top-0 z-10 flex h-16 items-center justify-between bg-transparent px-4 backdrop-blur-sm dark:bg-transparent">
-            <div class="flex items-center gap-2">
-                <div class="size-14 shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="Kedai Awan logo"
-                    style="background-image: url('assets/logo.png');">
+<body class="font-display bg-background-light dark:bg-background-dark text-zinc-800 dark:text-zinc-200">
+    <div class="w-full">
+        <header class="bg-background-light dark:bg-zinc-900 relative top-0 left-0 right-0 z-10 px-4 py-2">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <a class="flex items-center gap-1" href="#">
+                    <div class="size-14 shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                        data-alt="Kedai Awan logo" style="background-image: url('assets/logo.png');">
+                    </div>
+                    <span><span class="font-bold text-xl text-primary">Kedai</span><span
+                            class="font-bold text-xl text-primary/75">Awan</span></span>
+                </a>
+                <nav id="nav-menu"
+                    class="hidden absolute top-full left-0 right-0 bg-white dark:bg-zinc-900 pt-4 md:relative md:bg-transparent md:dark:bg-transparent md:flex items-center md:space-x-8 text-black dark:text-white font-semibold">
+                    <a class="block md:text-center text-left p-4 md:p-0 hover:text-primary" href="#">Home</a>
+                    <a class="block md:text-center text-left p-4 md:p-0 hover:text-primary" href="#menu">Menu</a>
+                    <a class="block md:text-center text-left p-4 md:p-0 hover:text-primary"
+                        href="#feedback-kawan">Feeback</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a class="flex items-center gap-2 text-black hover:text-primary" href="#">
+                        <span class="material-icons text-primary">search</span>
+                        <span class="font-semibold">Search Food</span>
+                    </a>
+                    <a class="bg-white text-primary px-4 py-2 rounded-md shadow-lg font-semibold flex items-center gap-2 hover:bg-zinc-100"
+                        href="#">
+                        <span class="material-icons">person</span>
+                        <span>Login</span>
+                    </a>
                 </div>
-                <!-- Font diperbesar menjadi text-2xl dan warna diubah jadi text-white -->
-                <h2 class="text-2xl font-bold tracking-tight text-white">Kedai Awan</h2>
+                <button id="menu-button" class="md:hidden text-black dark:text-white">
+                    <span class="material-icons text-3xl text-primary">menu</span>
+                </button>
             </div>
-            <!-- Warna ikon diubah jadi text-white -->
-            <button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
         </header>
 
-        <main class="flex-1 pb-24">
+        <section id="hero" class="text-black bg-amber-100 py-20 md:relative md:py-0 md:bg-transparent">
+            <img src="assets/header.jpg" alt="Aneka makanan Kedai Awan" class="hidden md:block w-full h-auto">
+            <div class="md:absolute md:inset-0 md:flex md:items-center">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-3xl text-left">
+                        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">Makan Enak<br />Under 30 Ribu!</h1>
+                        <p class="text-lg mb-8">Catering rumahan higenis, otentik, dan gak ngebosenin!</p>
 
-            <!-- Hero Section Baru -->
-            <!-- Section ini sekarang memiliki background image dan padding atas (pt-20) untuk memberi ruang bagi navbar -->
-            <div class="relative -mt-16 flex min-h-[480px] w-full flex-col items-center justify-center gap-6 bg-cover bg-center bg-no-repeat p-4 pt-20"
-                data-alt="A delicious plate of crispy fried chicken against a dark background"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAufC_PHNJ9MlQHuqKIgQMBS74h83rOaJ4R_5YGEszHi6NUwG4HVigmtjv-dj2KyMOXXNvyk9GG7mXbNlGn0bXKAuq4aPiAy4CzpxhZcIMLkGMEyYN90i45wv1pxrZ6ixqTTgBoyWiN9DCL6SE730NDZFMjOZ3s-7XK6QMmSKfIHgti0N-ANfX9v6i-loc6rdBUt2vC8XcmLYjL4UzbxuvIuLQPNEpAtaO_94QVJ8EWwyD5Me27dRpqiuIVsGmFc0vuuCO0JfvQLBqE');">
-                <div class="flex flex-col gap-2 text-center">
-                    <h1
-                        class="font-display text-4xl font-black leading-tight tracking-[-0.033em] text-white sm:text-5xl sm:font-black sm:leading-tight sm:tracking-[-0.033em]">
-                        Spicy Kicks that Make You Fly High!</h1>
-                    <h2
-                        class="font-display text-sm font-normal leading-normal text-white sm:text-base sm:font-normal sm:leading-normal">
-                        Experience the most delicious chicken, made with our special secret recipe.</h2>
+                        <div
+                            class="bg-white dark:bg-zinc-800 rounded-lg p-4 flex flex-col sm:flex-row items-center shadow-lg gap-2">
+                            <div class="flex items-center w-full bg-slate-100 rounded-md">
+                                <span class="material-icons text-zinc-400 dark:text-zinc-500 mx-3">search</span>
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-0 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500"
+                                    placeholder="Tulis satu keyword, kami akan berikan list rekomendasi!" type="text" />
+                            </div>
+
+                            <button
+                                class="bg-primary text-white w-full sm:w-40 p-2 rounded-md hover:bg-orange-600 flex justify-center items-center gap-2 mt-2 sm:mt-0">
+                                <span>Cari Makan</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="menu" class="py-24 bg-background-light dark:bg-background-dark">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
+                            <div class="relative bg-transparent">
+                                <img alt="Ayam Geprek with rice and vegetables"
+                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-geprek.svg" />
+
+                                <div
+                                    class="absolute bottom-0 left-0 bg-yellow-400 text-white font-bold px-3 py-1 rounded-md flex items-baseline gap-1">
+                                    <span class="text-3xl">15%</span>
+                                    <span class="text-sm font-normal">Off</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Ayam Geprek</h3>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">(Sambel Gempek/Matah)</p>
+
+                            <div class="flex">
+                                <span
+                                    class="bg-slate-300 text-zinc-500 dark:text-zinc-400 line-through p-2 rounded-l-lg">Rp
+                                    33.900</span>
+                                <span class="text-primary font-bold text-lg bg-primary/50 p-2 rounded-r-lg">Rp
+                                    22.000</span>
+                            </div>
+                        </div>
+                        <a target="_blank" href="http://bit.ly/order-kawan"
+                            class="w-full bg-primary text-white py-2 rounded-md font-semibold hover:bg-orange-600 inline-block text-center">
+                            Order Now
+                        </a>
+                    </div>
+
+                    <div>
+                        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
+                            <div class="relative">
+                                <img alt="Ayam Geprek with rice and vegetables"
+                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-fettucini.svg" />
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Fettucini Chicken Alfredo</h3>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Toping Sosis Kenzler</p>
+
+                            <div class="flex items-center gap-2">
+                                <span class="text-primary font-bold text-lg">Rp 22.000</span>
+                            </div>
+                        </div>
+                        <a
+                            class="w-full inline-block text-center bg-slate-300 text-slate-500 py-2 rounded-md font-semibold cursor-not-allowed">
+                            Coming Soon
+                        </a>
+                    </div>
+
+                    <div>
+                        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
+                            <div class="relative">
+                                <img alt="Ayam Geprek with rice and vegetables"
+                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-nasi-goreng.svg" />
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Nasi Goreng Bakso Smoky</h3>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Ayam Lumur + Chrispy Kailan
+                            </p>
+
+                            <div class="flex items-center gap-2">
+                                <span class="text-primary font-bold text-lg">Rp 25.000</span>
+                            </div>
+                        </div>
+                        <a
+                            class="w-full inline-block text-center bg-slate-300 text-slate-500 py-2 rounded-md font-semibold cursor-not-allowed">
+                            Coming Soon
+                        </a>
+                    </div>
+
+                    <div>
+                        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
+                            <div class="relative">
+                                <img alt="Ayam Geprek with rice and vegetables"
+                                    class="w-full h-80 object-cover bg-transparent"
+                                    src="assets/menu-ayam-panggang.svg" />
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Ayam Panggang Lumur</h3>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Tumis Brokoli</p>
+
+                            <div class="flex items-center gap-2">
+                                <span class="text-primary font-bold text-lg">Rp 20.000</span>
+                            </div>
+                        </div>
+                        <a
+                            class="w-full inline-block text-center bg-slate-300 text-slate-500 py-2 rounded-md font-semibold cursor-not-allowed">
+                            Coming Soon
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- Akhir Hero Section Baru -->
+        </section>
 
-            <h2
-                class="font-display px-4 pb-3 pt-5 text-[32px] font-bold leading-tight tracking-light text-[#1b0e0e] dark:text-[#f8f6f6]">
-                Menu Highlights
-            </h2>
+        <section id="how-it-works" class="how-it-works-bg py-24 relative z-0">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-zinc-900 dark:text-white">Gini nih cara ordernya...
+                </h2>
+
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+
+                    <div class="flex flex-col items-center md:w-1/4">
+                        <div class="bg-primary text-white rounded-lg p-5 mb-4 inline-block">
+                            <span class="material-icons text-4xl">notifications</span>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-zinc-900 dark:text-white">Yuk, pilih menu</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400">Kamu mau makan apa hari ini? pilih semuanya di menu
+                            ya!</p>
+                    </div>
+
+                    <div class="flex flex-col items-center md:w-1/4">
+                        <div class="bg-primary text-white rounded-lg p-5 mb-4 inline-block">
+                            <span class="material-icons text-4xl">payments</span>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-zinc-900 dark:text-white">Isi form sekalian bayar</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400">Aman dan gampang. Tinggal scan kyurisss.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center md:w-1/4">
+                        <div class="bg-primary text-white rounded-lg p-5 mb-4 inline-block">
+                            <span class="material-icons text-4xl">sentiment_very_satisfied</span>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-zinc-900 dark:text-white">Enjoy meals</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400">Yeay! selamat menikmati masakan kami... yang spesial
+                            buat kamu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
             <div
-                class="flex md:justify-center overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-                <div class="flex items-stretch gap-3 p-4 pt-0">
+                class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+                <div class="layout-container flex h-full grow flex-col">
                     <div
-                        class="flex min-w-[280px] flex-1 flex-col gap-4 rounded-xl border-2 border-primary bg-background-light shadow-[0_4px_16px_rgba(234,42,51,0.2)] dark:bg-background-dark dark:shadow-[0_4px_16px_rgba(234,42,51,0.3)]">
-                        <div class="aspect-[4/3] w-full rounded-t-lg bg-cover bg-center bg-no-repeat"
-                            data-alt="A serving of spicy fried chicken with chili flakes"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxiUC11FOy6M0mJrm28tk011b8eE9Bv-CySlu0k93jfXhUziX1VYmbkXZ2nFU5HQTJgJ9TNsjcO2NpgBtipIVGQ3LG0ffPzhcAXTSMIsHh9tgyST56x89CqrZQantOYcDaHbD1YY4GRV0sFDlHgN2w0xcJohqDl0C8FfAsSZ99hSPPamtMprGbKwocZzxARmPaQ_NhXLllkA7nTYnom1XTNS8e-XHwI7Cmfw2ALbfb6DZBMzOoxNqv2qDbljHG-pXmUYa5yZ4XVe6i');">
-                        </div>
-                        <div class="flex flex-1 flex-col justify-between gap-4 p-4 pt-0">
-                            <div class="flex flex-col">
-                                <p
-                                    class="font-display text-lg font-bold leading-normal text-[#1b0e0e] dark:text-[#f8f6f6]">
-                                    Ayam Geprek with Rice</p>
-                                <p
-                                    class="font-display text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">
-                                    Crispy smashed chicken with fiery sambal</p>
-                                <p
-                                    class="font-display mt-2 text-base font-bold leading-normal text-primary dark:text-primary">
-                                    $13.99</p>
+                        class="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center items-center py-10 sm:py-20">
+                        <div class="layout-content-container flex flex-col w-full max-w-5xl flex-1">
+                            <div class="@container">
+                                <div
+                                    class="flex flex-col items-center justify-start rounded-xl @3xl:flex-row @3xl:items-center shadow-lg bg-card-light dark:bg-card-dark border border-gray-200/50 dark:border-gray-700/50 overflow-hidden">
+                                    <div
+                                        class="w-full @3xl:w-2/5 p-8 flex flex-col items-center @3xl:items-start text-center @3xl:text-left">
+                                        <div
+                                            class="flex items-center justify-center bg-[#25D366] rounded-xl w-16 h-16 mb-6 text-white">
+                                            <svg class="w-8 h-8 text-gray-800 text-white" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path fill="currentColor" fill-rule="evenodd"
+                                                    d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                                                    clip-rule="evenodd" />
+                                                <path fill="currentColor"
+                                                    d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                                            </svg>
+
+                                        </div>
+                                        <h2
+                                            class="text-3xl font-bold tracking-tight mb-3 text-text-light dark:text-text-dark">
+                                            Get Updates <span class="text-primary">First!</span></h2>
+                                        <p
+                                            class="text-text-secondary-light dark:text-text-secondary-dark text-base leading-relaxed mb-6">
+                                            Follow our channel to get exclusive promotions, new product announcements,
+                                            and the latest company news delivered right to your phone.
+                                        </p>
+                                        <ul class="space-y-4 mb-8 w-full">
+                                            <li class="flex items-center gap-3">
+                                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+
+                                                <span class="text-text-light dark:text-text-dark text-base">Exclusive
+                                                    Promotions &amp; Discounts</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <span class="text-text-light dark:text-text-dark text-base">New Product
+                                                    Announcements</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <span class="text-text-light dark:text-text-dark text-base">Latest
+                                                    News</span>
+                                            </li>
+                                        </ul>
+                                        <a href="https://bit.ly/channel-kawan"
+                                            class="flex min-w-[84px] w-full @3xl:w-auto max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-text-light text-base font-bold leading-normal hover:bg-opacity-90 transition-colors">
+                                            <span class="truncate">Follow on WhatsApp</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="https://whatsapp.com/channel/0029VbBboRE9WtCBcHDMkV3X"
-                            class="flex h-11 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary text-base font-bold leading-normal tracking-[0.015em] text-white shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90 dark:bg-primary dark:text-white dark:hover:bg-primary/90">
-                                Order Now
-                            </a>
-                        </div>
-                    </div>
-                    <div
-                        class="flex min-w-60 flex-1 flex-col gap-4 rounded-xl bg-background-light shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:bg-background-dark dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
-                        <div class="relative aspect-square w-full rounded-t-xl bg-cover bg-center bg-no-repeat"
-                            data-alt="A bowl of grilled chicken with rice and vegetables"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3HRD6CD5VY4Q0mCmlXpM-uK1uLEmhrkvw4G91V3U9Q4BIeCIHPYETQAVICAB3fl-W0RRubNGtvFN_5RfUbqiUKQFIQOq9ej9RR51x6ANU9u4t85Xr9tSsKO3basAHfJ70hEZ4LcA0-vkGs5_L5BdNiMaR5cQ-T5c4YrLQPNtlGizroSEKUlTUvSAUG3g18GFty7YVvsEDT5MotdhpZrCq9M9IHQuehxGMmn8gULIpYSnjzmWX9ixwyxGEF80prbgkOIRaEa5BYML8');">
-                            <div
-                                class="absolute inset-0 flex items-center justify-center rounded-t-xl bg-black/50 backdrop-blur-sm">
-                                <p class="text-lg font-bold text-white">Coming Soon</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-1 flex-col justify-between gap-4 p-4 pt-0">
-                            <div>
-                                <p
-                                    class="font-display text-base font-bold leading-normal text-[#1b0e0e]/50 dark:text-[#f8f6f6]/50">
-                                    New Menu Item</p>
-                                <p
-                                    class="font-display text-sm font-normal leading-normal text-[#994d51]/50 dark:text-[#d48c8f]/50">
-                                    Stay tuned for more deliciousness!</p>
-                            </div>
-                            <button
-                                class="flex h-10 min-w-[84px] max-w-[480px] cursor-not-allowed items-center justify-center overflow-hidden rounded-lg bg-slate-200 text-slate-500 text-sm font-bold leading-normal tracking-[0.015em] dark:bg-slate-700 dark:text-slate-400">
-                                <span class="truncate">Unavailable</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        class="flex min-w-60 flex-1 flex-col gap-4 rounded-xl bg-background-light shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:bg-background-dark dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
-                        <div class="relative aspect-square w-full rounded-t-xl bg-cover bg-center bg-no-repeat"
-                            data-alt="A platter of chicken wings with dipping sauce"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgwK8iWVHclFt1xR4p5blRWK_yLtcUk6M_ZETd-duceMSfCRSkNEEZWuU3nkocXY_cGFbiMl9jROZ0SQ6kL9bC_lmrUNXchwdmXJ2n-GDMK0EEKbOMkseJfGjPvHG7QfMZ8EV9wxNZLYqmw7oLb3xulNhDEOEeRu1DsPgJPbkXcANrzaEIBkdQSv0ISSFwlTw4DshUE6evMUi_xInEIFgcEf-COvDH9V3UWpiVHzrXi1-GRpFGrOmZFW9u2MJf2WNyZ3qOcF4iTLVA');">
-                            <div
-                                class="absolute inset-0 flex items-center justify-center rounded-t-xl bg-black/50 backdrop-blur-sm">
-                                <p class="text-lg font-bold text-white">Coming Soon</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-1 flex-col justify-between gap-4 p-4 pt-0">
-                            <div>
-                                <p
-                                    class="font-display text-base font-bold leading-normal text-[#1b0e0e]/50 dark:text-[#f8f6f6]/50">
-                                    Another Tasty Dish</p>
-                                <p
-                                    class="font-display text-sm font-normal leading-normal text-[#994d51]/50 dark:text-[#d48c8f]/50">
-                                    Get ready for a new favorite!</p>
-                            </div>
-                            <button
-                                class="flex h-10 min-w-[84px] max-w-[480px] cursor-not-allowed items-center justify-center overflow-hidden rounded-lg bg-slate-200 text-slate-500 text-sm font-bold leading-normal tracking-[0.015em] dark:bg-slate-700 dark:text-slate-400">
-                                <span class="truncate">Unavailable</span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <section class="relative w-full overflow-hidden bg-slate-50 py-16 px-4 dark:bg-slate-900">
-                <!-- Elemen Dekoratif (SVG) -->
-                <svg class="absolute top-10 left-4 h-24 w-24 text-slate-300 opacity-50 dark:text-slate-700" width="200"
-                    height="194" viewBox="0 0 200 194" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M129.5 192.5C129.5 192.5 186.5 184 195 147.5C203.5 111 190.5 103 177 101.5C163.5 100 157.5 108.5 157.5 108.5C157.5 108.5 125 101 113.5 105C102 109 91 129.5 91 129.5C91 129.5 76 114 62 114C48 114 31 120 31 138C31 156 46 166.5 60.5 166.5C75 166.5 83.5 154.5 83.5 154.5C83.5 154.5 92.5 174 100.5 181.5C108.5 189 129.5 192.5 129.5 192.5Z"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M113 105.5C113 105.5 108 86.5 108 72C108 57.5 121 48 133 48C145 48 152.5 57 152.5 70C152.5 83 145.5 103 145.5 103"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M91 129.5C91 129.5 81 106.5 81 88C81 69.5 93.5 59.5 105.5 59.5C117.5 59.5 127 68.5 127 88C127 107.5 119.5 129 119.5 129"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M62 114C62 114 55 93.5 55 77.5C55 61.5 66.5 54 77 54C87.5 54 96.5 61.5 96.5 77C96.5 92.5 90 114 90 114"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M119.5 30C119.5 30 115.5 24 105.5 24C95.5 24 88.5 30.5 88.5 40C88.5 49.5 95 60 95 60"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M102 18.5C102 18.5 98 12.5 88 12.5C78 12.5 71 19 71 28.5C71 38 77.5 48.5 77.5 48.5"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M84.5 9.5C84.5 9.5 80.5 3.5 70.5 3.5C60.5 3.5 53.5 10 53.5 19.5C53.5 29 60 39.5 60 39.5"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M66.5 1C66.5 1 62.5 0.5 52.5 0.5C42.5 0.5 35.5 7 35.5 16.5C35.5 26 42 36.5 42 36.5"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <svg class="absolute bottom-10 right-4 h-20 w-20 text-slate-300 opacity-50 dark:text-slate-700"
-                    width="131" height="159" viewBox="0 0 131 159" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M61.3415 1C64.6318 3.56847 67.2831 6.51865 69.2954 9.85055C75.877 20.6548 77.9307 33.7434 76.2201 46.505C74.5095 59.2666 69.1152 71.071 60.0373 79.4184C50.9594 87.7658 38.8687 92.1158 26.5415 91.5654C14.2144 91.015 2.58473 85.602 -5.5 76.5"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M1 88.5C41.1667 86.5 64.6 77.1 77 65C83.8 58.4 92.4 46.7 94 40.5C98 29.5 96.5 16.5 90 6.5"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path
-                        d="M130 92C128.5 111.167 119.5 137.9 104.5 151C95.5 159 80.5 159.4 73.5 158.5C66.5 157.6 62.5 153 62.5 153"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
+        <section id="feedback-kawan" class="py-24 feedback-bg">
+            <div class="container mx-auto px-4 py-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-zinc-800 mb-6">Let me know what you think</h2>
+                <a target="_blank"
+                    class="inline-block bg-primary text-white font-bold text-lg px-10 py-4 rounded-md hover:bg-orange-600"
+                    href="https://bit.ly/feedback-kawan">We're all ears</a>
+            </div>
+        </section>
 
-                <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-8">
-                    <h2
-                        class="font-display text-center text-[32px] font-bold leading-tight tracking-light text-[#1b0e0e] dark:text-[#f8f6f6]">
-                        Combo Rice Menu
-                    </h2>
-
-                    <!-- Kontainer Gambar dan Anotasi -->
-                    <!-- 'relative' diperlukan untuk memposisikan anotasi -->
-                    <div class="relative w-full max-w-lg">
-                        <img src="https://placehold.co/500x350/f1f5f9/334155?text=Paket+Menu" alt="Kemasan Paket Menu"
-                            class="mx-auto rounded-lg shadow-lg" />
-
-                        <!-- Anotasi 1: LAUK UTAMA -->
-                        <div class="absolute top-[25%] left-[5%] md:left-[-10%] w-32 text-right">
-                            <span class="font-bold text-sm uppercase text-[#1b0e0e] dark:text-[#f8f6f6]">Lauk
-                                Utama</span>
-                            <!-- SVG Panah -->
-                            <svg class="absolute top-1/2 right-[-40px] w-12 h-12 text-[#1b0e0e] dark:text-[#f8f6f6]"
-                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 95C20.1667 81.6667 40.6 57.4 44.5 45L95 5" stroke="currentColor"
-                                    stroke-width="3" stroke-linecap="round" />
-                            </svg>
-                        </div>
-
-                        <!-- Anotasi 2: NASI PUTIH -->
-                        <div class="absolute top-[15%] right-[5%] md:right-[-10%] w-32 text-left">
-                            <span class="font-bold text-sm uppercase text-[#1b0e0e] dark:text-[#f8f6f6]">Nasi
-                                Putih</span>
-                            <!-- SVG Panah -->
-                            <svg class="absolute top-1/2 left-[-40px] w-12 h-12 text-[#1b0e0e] dark:text-[#f8f6f6]"
-                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M95 95C79.8333 81.6667 59.4 57.4 55.5 45L5 5" stroke="currentColor"
-                                    stroke-width="3" stroke-linecap="round" />
-                            </svg>
-                        </div>
-
-                        <!-- Anotasi 3: SAMBAL -->
-                        <div class="absolute bottom-[10%] left-[10%] md:left-[-5%] w-32 text-right">
-                            <span class="font-bold text-sm uppercase text-[#1b0e0e] dark:text-[#f8f6f6]">Sambal</span>
-                            <!-- SVG Panah -->
-                            <svg class="absolute bottom-[-30px] right-[-40px] w-12 h-12 text-[#1b0e0e] dark:text-[#f8f6f6]"
-                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 5C20.1667 18.3333 40.6 42.6 44.5 55L95 95" stroke="currentColor"
-                                    stroke-width="3" stroke-linecap="round" />
-                            </svg>
-                        </div>
-
-                        <!-- Anotasi 4: LAUK PENDAMPING -->
-                        <div class="absolute bottom-[20%] right-[0%] md:right-[-20%] w-40 text-left">
-                            <span class="font-bold text-sm uppercase text-[#1b0e0e] dark:text-[#f8f6f6]">Lauk
-                                Pendamping</span>
-                            <!-- SVG Panah -->
-                            <svg class="absolute bottom-[-30px] left-[-40px] w-12 h-12 text-[#1b0e0e] dark:text-[#f8f6f6]"
-                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M95 5C79.8333 18.3333 59.4 42.6 55.5 55L5 95" stroke="currentColor"
-                                    stroke-width="3" stroke-linecap="round" />
-                            </svg>
-                        </div>
+        <footer class="bg-zinc-900 text-zinc-400 pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <hr class="border-zinc-700" />
+                <div class="grid md:grid-cols-3 gap-8 py-12">
+                    <div>
+                        <h3 class="font-bold text-white mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a class="hover:text-white" href="#">About us</a></li>
+                            <li><a class="hover:text-white" href="#">Team</a></li>
+                            <li><a class="hover:text-white" href="#">Careers</a></li>
+                            <li><a class="hover:text-white" href="#">Blog</a></li>
+                        </ul>
                     </div>
-
-                    <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
-                        *Side dishes may change from time to time.
-                    </p>
+                    <div>
+                        <h3 class="font-bold text-white mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li><a class="hover:text-white" href="#">Help &amp; Support</a></li>
+                            <li><a class="hover:text-white" href="#">Partner with us</a></li>
+                            <li><a class="hover:text-white" href="#">Ride with us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a class="hover:text-white" href="#">Terms &amp; Conditions</a></li>
+                            <li><a class="hover:text-white" href="#">Refund &amp; Cancellation</a></li>
+                            <li><a class="hover:text-white" href="#">Privacy Policy</a></li>
+                            <li><a class="hover:text-white" href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
-                <div class="flex flex-col gap-4">
-                    <h2
-                        class="font-display text-[32px] font-bold leading-tight tracking-light text-[#1b0e0e] dark:text-[#f8f6f6] @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
-                        Why You'll Love Us</h2>
-                    <p
-                        class="font-display max-w-[720px] text-base font-normal leading-normal text-[#1b0e0e] dark:text-[#f8f6f6]/80">
-                        We're committed to quality, speed, and flavor in every bite.</p>
+                <div class="py-8">
+                    <h3 class="font-bold text-white mb-4">FOLLOW US</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a class="hover:text-white" href="#"><img alt="Instagram" class="h-6 w-6"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiIt4805qOoSNw349fRKNebThhvcXJScHlEbNUyME4wCESZP5rExJwYNRUVIFQm1Fa-Voeie2HVa_4CWfR3bDoONs1gW3KNRdXNNWgq8ohNUEOVl2lT1wr89hSnsxKgbMz0FOWWF2UFUqUqQBI0AmFYeFKvqkslpIzHrVv_GN4-ZngBfERCFFJJX4vf-mVuo5tUDP7rt1arlW4N6trK8wcoDIADceHDrNZ0kvskH35tYvu23h6tkOiz7V6E_74QHIdX1b6yG84XK5C" /></a>
+                        <a class="hover:text-white" href="#"><img alt="Facebook" class="h-6 w-6"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRJ6EWSZjEwGWIlZnLLwds30Q6uMUooHeHxI0Nb5k_fA5xTrSs2y_QE_d0b2YDJAmWB-_znaVw_LtJvFlB8OZbT25FEMsrHWWXgH_CfA2hdZeFD9NnWQEE4KtcNO4wKMNnIqKPB9EftInO_johDLaNDFsxtrz0Rq8xSlc1a2XnstVi8RCE6ArbvsrBLtykBehTKAfqHyXgjGXRlcEb5Kr6X5QnvA4SNVhJkkFvf5unYZHv-w3MOmLL-j1C9OOZ308L0bUJfI-OR9za" /></a>
+                        <a class="hover:text-white" href="#"><img alt="Twitter" class="h-6 w-6"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaWqQY42DmeRxi-LaFSKroK3EA6nr9jGyZTthfEcTzCUC0wmFC4S6Hzpj44a08OJ9eTV6Cp5LcpWFORz_TnhZzbau_x7QsJzH0XNiyDbOMCelqOBiQBNPMrYgB4uLKrnJstn8By0LQBw9kcD3DKSw96XlM1UVj9rufq14-MaOhsrUrLeY1DUCYRAMmhCyG8Cv09PdgLbOr9Mc68WtTO-dQj35X17VlKimZNaLAc0xwNDCyOwjfkEYc5CYSr-ycPyiTNeOzFeDOg3EH" /></a>
+                    </div>
                 </div>
-                <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
-                    <div
-                        class="flex flex-1 flex-col gap-3 rounded-xl border border-[#e7d0d1]/50 bg-background-light p-4 shadow-[0_4px_12px_rgba(0,0,0,0.02)] dark:border-[#f8f6f6]/10 dark:bg-background-dark dark:shadow-none">
-                        <span class="material-symbols-outlined text-primary">eco</span>
-                        <div class="flex flex-col gap-1">
-                            <h2
-                                class="font-display text-base font-bold leading-tight text-[#1b0e0e] dark:text-[#f8f6f6]">
-                                Fresh Ingredients</h2>
-                            <p
-                                class="font-display text-sm font-normal leading-normal text-[#994d51] dark:text-[#d48c8f]">
-                                Only the best for our dishes.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-1 flex-col gap-3 rounded-xl border border-[#e7d0d1]/50 bg-background-light p-4 shadow-[0_4px_12px_rgba(0,0,0,0.02)] dark:border-[#f8f6f6]/10 dark:bg-background-dark dark:shadow-none">
-                        <span class="material-symbols-outlined text-primary">local_shipping</span>
-                        <div class="flex flex-col gap-1">
-                            <h2
-                                class="font-display text-base font-bold leading-tight text-[#1b0e0e] dark:text-[#f8f6f6]">
-                                Fast Delivery</h2>
-                            <p
-                                class="font-display text-sm font-normal leading-normal text-[#994d51] dark:text-[#d48c8f]">
-                                Delivered hot and fast to your door.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-1 flex-col gap-3 rounded-xl border border-[#e7d0d1]/50 bg-background-light p-4 shadow-[0_4px_12px_rgba(0,0,0,0.02)] dark:border-[#f8f6f6]/10 dark:bg-background-dark dark:shadow-none">
-                        <span class="material-symbols-outlined text-primary">auto_awesome</span>
-                        <div class="flex flex-col gap-1">
-                            <h2
-                                class="font-display text-base font-bold leading-tight text-[#1b0e0e] dark:text-[#f8f6f6]">
-                                Special Recipe</h2>
-                            <p
-                                class="font-display text-sm font-normal leading-normal text-[#994d51] dark:text-[#d48c8f]">
-                                Unforgettable family recipe.</p>
-                        </div>
-                    </div>
+                <hr class="border-zinc-700" />
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm pt-8">
+                    <p>All rights Reserved © Kedai Awan, 2025</p>
+                    <p>Made with <span class="text-red-500">♥</span> by Kedai Awan</p>
                 </div>
             </div>
-        </main>
+        </footer>
     </div>
-</body>
 
+</body>
 </html>
