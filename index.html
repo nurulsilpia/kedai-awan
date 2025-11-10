@@ -158,14 +158,44 @@
         </section>
 
         <section id="menu" class="py-24 bg-background-light dark:bg-background-dark">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                    <div>
+            <div class="container mx-auto px-4 relative">
+        
+                <div id="menu-slider"
+                    class="flex flex-nowrap gap-8 overflow-x-auto scroll-snap-type-x mandatory py-4 scroll-smooth">
+        
+                    <div class="w-72 flex-shrink-0 scroll-snap-align-start">
                         <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
                             <div class="relative bg-transparent">
-                                <img alt="Ayam Geprek with rice and vegetables"
-                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-geprek.jpg" />
-
+                                <img alt="Ayam Geprek with rice and vegetables" class="w-full h-80 object-cover bg-transparent"
+                                    src="assets/chicken-chili-padi.jpg" />
+                                <div
+                                    class="absolute bottom-0 left-0 bg-yellow-400 text-white font-bold px-3 py-1 rounded-md flex items-baseline gap-1">
+                                    <span class="text-3xl">28%</span>
+                                    <span class="text-sm font-normal">Off</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Chicken Karaage Chili Padi</h3>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3 h-10">Karaage super crispy! Dengan sambal chili padi</p>
+                            <div class="flex">
+                                <span class="bg-slate-300 text-zinc-500 dark:text-zinc-400 line-through p-2 rounded-l-lg">Rp
+                                    25.500</span>
+                                <span class="text-primary font-bold text-lg bg-primary/50 p-2 rounded-r-lg">Rp
+                                    18.000</span>
+                            </div>
+                        </div>
+                        <a target="_blank" href="http://bit.ly/order-kawan"
+                            class="w-full bg-primary text-white py-2 rounded-md font-semibold hover:bg-orange-600 inline-block text-center">
+                            Order Now
+                        </a>
+                    </div>
+        
+                    <div class="w-72 flex-shrink-0 scroll-snap-align-start">
+                        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
+                            <div class="relative bg-transparent">
+                                <img alt="Ayam Geprek with rice and vegetables" class="w-full h-80 object-cover bg-transparent"
+                                    src="assets/menu-geprek.jpg" />
                                 <div
                                     class="absolute bottom-0 left-0 bg-yellow-400 text-white font-bold px-3 py-1 rounded-md flex items-baseline gap-1">
                                     <span class="text-3xl">15%</span>
@@ -175,33 +205,30 @@
                         </div>
                         <div class="py-4">
                             <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Ayam Geprek</h3>
-                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">(Sambel Geprek/Matah)</p>
-
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3 h-10">Ayam empuk digeprek. Pedasnya nampol! (Geprek/Matah)</p>
                             <div class="flex">
-                                <span
-                                    class="bg-slate-300 text-zinc-500 dark:text-zinc-400 line-through p-2 rounded-l-lg">Rp
+                                <span class="bg-slate-300 text-zinc-500 dark:text-zinc-400 line-through p-2 rounded-l-lg">Rp
                                     33.900</span>
                                 <span class="text-primary font-bold text-lg bg-primary/50 p-2 rounded-r-lg">Rp
                                     22.000</span>
                             </div>
                         </div>
-                        <a target="_blank" href="http://bit.ly/order-kawan"
-                            class="w-full bg-primary text-white py-2 rounded-md font-semibold hover:bg-orange-600 inline-block text-center">
-                            Order Now
+                        <a
+                            class="w-full inline-block text-center bg-slate-300 text-slate-500 py-2 rounded-md font-semibold cursor-not-allowed">
+                            Coming Soon
                         </a>
                     </div>
-
-                    <div>
+        
+                    <div class="w-72 flex-shrink-0 scroll-snap-align-start">
                         <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
                             <div class="relative">
-                                <img alt="Ayam Geprek with rice and vegetables"
-                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-fettucini.jpg" />
+                                <img alt="Ayam Geprek with rice and vegetables" class="w-full h-80 object-cover bg-transparent"
+                                    src="assets/menu-fettucini.jpg" />
                             </div>
                         </div>
-                        <div class="p-4">
+                        <div class="py-4">
                             <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Fettucini Chicken Alfredo</h3>
-                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Toping Sosis Kenzler</p>
-
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3 h-10">Super creamy! Topping sosis Kenzler melimpah.</p>
                             <div class="flex items-center gap-2">
                                 <span class="text-primary font-bold text-lg">Rp 22.000</span>
                             </div>
@@ -211,19 +238,18 @@
                             Coming Soon
                         </a>
                     </div>
-
-                    <div>
+        
+                    <div class="w-72 flex-shrink-0 scroll-snap-align-start">
                         <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
                             <div class="relative">
-                                <img alt="Ayam Geprek with rice and vegetables"
-                                    class="w-full h-80 object-cover bg-transparent" src="assets/menu-nasi-goreng.jpg" />
+                                <img alt="Ayam Geprek with rice and vegetables" class="w-full h-80 object-cover bg-transparent"
+                                    src="assets/menu-nasi-goreng.jpg" />
                             </div>
                         </div>
-                        <div class="p-4">
+                        <div class="py-4">
                             <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Nasi Goreng Bakso Smoky</h3>
-                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Ayam Lumur + Chrispy Kailan
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3 h-10">Wangi smoky-nya beda! Komplit dg ayam & kailan crispy.
                             </p>
-
                             <div class="flex items-center gap-2">
                                 <span class="text-primary font-bold text-lg">Rp 25.000</span>
                             </div>
@@ -233,19 +259,17 @@
                             Coming Soon
                         </a>
                     </div>
-
-                    <div>
+        
+                    <div class="w-72 flex-shrink-0 scroll-snap-align-start">
                         <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden group">
                             <div class="relative">
-                                <img alt="Ayam Geprek with rice and vegetables"
-                                    class="w-full h-80 object-cover bg-transparent"
+                                <img alt="Ayam Geprek with rice and vegetables" class="w-full h-80 object-cover bg-transparent"
                                     src="assets/menu-ayam-panggang.jpg" />
                             </div>
                         </div>
-                        <div class="p-4">
+                        <div class="py-4">
                             <h3 class="font-bold text-lg text-zinc-900 dark:text-white">Ayam Panggang Lumur</h3>
-                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3">dengan Tumis Brokoli</p>
-
+                            <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-3 h-10">Bumbu lumur super rich! Plus tumis brokoli sehat.</p>
                             <div class="flex items-center gap-2">
                                 <span class="text-primary font-bold text-lg">Rp 20.000</span>
                             </div>
@@ -255,7 +279,19 @@
                             Coming Soon
                         </a>
                     </div>
+        
                 </div>
+        
+                <button id="scroll-left-btn"
+                    class="hidden md:block absolute top-1/2 left-0 -translate-y-1/2 bg-white dark:bg-zinc-800 rounded-full shadow-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 z-10 transition-all">
+                    <span class="material-icons text-primary">chevron_left</span>
+                </button>
+        
+                <button id="scroll-right-btn"
+                    class="hidden md:block absolute top-1/2 right-0 -translate-y-1/2 bg-white dark:bg-zinc-800 rounded-full shadow-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 z-10 transition-all">
+                    <span class="material-icons text-primary">chevron_right</span>
+                </button>
+        
             </div>
         </section>
 
@@ -325,7 +361,8 @@
                                             Get Updates <span class="text-primary">First!</span></h2>
                                         <p
                                             class="text-text-secondary-light dark:text-text-secondary-dark text-base leading-relaxed mb-6">
-                                            Ikuti channel kami untuk dapat promo eksklusif, pengumuman produk baru, dan info menu terbaru langsung ke HP kamu.
+                                            Ikuti channel kami untuk dapat promo eksklusif, pengumuman produk baru, dan
+                                            info menu terbaru langsung ke HP kamu.
                                         </p>
                                         <ul class="space-y-4 mb-8 w-full">
                                             <li class="flex items-center gap-3">
@@ -348,7 +385,8 @@
                                                         d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
                                                         clip-rule="evenodd" />
                                                 </svg>
-                                                <span class="text-text-light dark:text-text-dark text-base">Pengumuman Produk Baru</span>
+                                                <span class="text-text-light dark:text-text-dark text-base">Pengumuman
+                                                    Produk Baru</span>
                                             </li>
                                             <li class="flex items-center gap-3">
                                                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
@@ -358,10 +396,11 @@
                                                         d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
                                                         clip-rule="evenodd" />
                                                 </svg>
-                                                <span class="text-text-light dark:text-text-dark text-base">Berita Terbaru</span>
+                                                <span class="text-text-light dark:text-text-dark text-base">Berita
+                                                    Terbaru</span>
                                             </li>
                                         </ul>
-                                        <a href="https://bit.ly/channel-kawan"
+                                        <a target="_blank" href="https://bit.ly/channel-kawan"
                                             class="flex min-w-[84px] w-full @3xl:w-auto max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-text-light text-base font-bold leading-normal hover:bg-opacity-90 transition-colors">
                                             <span class="truncate">Follow on WhatsApp</span>
                                         </a>
@@ -433,6 +472,68 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
+            // --- Kode Anda yang sudah ada (Mobile Menu) ---
+            const menuButton = document.getElementById('menu-button');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuButton && navMenu) {
+                menuButton.addEventListener('click', () => {
+                    navMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- LOGIKA SLIDER BARU ---
+            const slider = document.getElementById('menu-slider');
+            const leftBtn = document.getElementById('scroll-left-btn');
+            const rightBtn = document.getElementById('scroll-right-btn');
+
+            if (slider && leftBtn && rightBtn) {
+                // Tentukan seberapa jauh scroll setiap klik (sesuai lebar kartu + gap)
+                // w-72 (288px) + gap-8 (32px) = 320px
+                const scrollAmount = 320;
+
+                const checkScrollButtons = () => {
+                    // Cek apakah sudah di paling kiri
+                    if (slider.scrollLeft <= 0) {
+                        leftBtn.classList.add('hidden');
+                    } else {
+                        leftBtn.classList.remove('hidden');
+                    }
+
+                    // Cek apakah sudah di paling kanan
+                    // slider.scrollWidth = total lebar konten
+                    // slider.clientWidth = lebar area yang terlihat
+                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) { // -1 untuk margin eror
+                        rightBtn.classList.add('hidden');
+                    } else {
+                        rightBtn.classList.remove('hidden');
+                    }
+                };
+
+                // Event listener untuk tombol kiri
+                leftBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                // Event listener untuk tombol kanan
+                rightBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                // Sembunyikan/tampilkan tombol saat di-scroll
+                slider.addEventListener('scroll', checkScrollButtons);
+
+                // Cek status tombol saat pertama kali halaman dimuat
+                checkScrollButtons();
+
+                // Cek juga saat ukuran window berubah
+                window.addEventListener('resize', checkScrollButtons);
+            }
+        });
+    </script>
 </body>
+
 </html>
